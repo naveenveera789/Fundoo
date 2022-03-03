@@ -1,0 +1,63 @@
+.keep_img {
+    width : 40px;
+    height: 40px;
+}
+.heading{
+    padding-top: 8px;
+    font-weight:normal;
+    font-size: 22px;
+    color: #5f6368;
+}
+.searchBar {
+    height : 45px;
+    border : 0.05px solid lightgray;
+    border-radius : 8px;
+    padding-left : 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 15px;
+    margin-left: 150px;
+    background-color:#f1f3f4;
+}
+.icons{
+    padding-left: 320px;
+    opacity: 0.6;
+}
+.drawer{
+    padding-left: 17px;
+}
+.toolbar{
+    background-color: white;
+    border-bottom: 0.1px solid rgb(201,199,199);
+}
+.sidenav-container{
+    flex:1;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.btns{
+    opacity: 0.6;
+}
+.btns:hover{
+    opacity: 1;
+}
+.order:hover{
+    background-color: #feefc3;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+.names{
+    padding-left: 30px;
+    padding-top: 15px;
+    padding-right: 110px;
+}
+.content{
+    background-color: white;
+}
