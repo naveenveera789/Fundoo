@@ -1,13 +1,21 @@
 <div class="container" fxLayoutAlign="center center">
-    <mat-card class="design" fxFlex="45" fxLayout="column">
-        <div>
-            <input class="titletext" matInput type="text" placeholder="Title"> 
-        </div>
-        <div>
-            <input class="takenote" matInput type="text" placeholder="Take a Note ..."> 
-        </div>
-        <div>
-            <app-icons></app-icons>
-        </div>
-    </mat-card>
+    <div class="mainbox" *ngIf="!isExpanded" (click)="mainbox()">
+        <mat-card class="design1" fxflex="125" fxlayout="column">
+            <input class="maintext" matInput type="text" placeholder="Take a note...">
+        </mat-card>
+    </div>
+    <div class="fullbox" *ngIf="isExpanded">
+        <mat-card class="design2" fxFlex="125" fxLayout="column">
+            <div>
+                <input class="titletext" matInput type="text" [(ngModel)]="title" placeholder="Title"> 
+            </div>
+            <div>
+                <textarea class="takenote" placeholder="Take a note..." [(ngModel)]="description"></textarea>
+            </div>
+            <div fxLayout="row">
+                <app-icons></app-icons>
+                <button mat-flat-button (click)="isExpanded=!isExpanded" (click)="create()" class="close">Close</button>
+            </div>
+        </mat-card>
+    </div>
 </div>

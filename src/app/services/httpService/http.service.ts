@@ -8,6 +8,7 @@ import { environment } from 'src/environments/environment';
 export class HttpService {
 
   BaseUrl = environment.BaseUrl;
+  token:any;
 
   constructor(private http: HttpClient) { }
 
@@ -16,9 +17,16 @@ export class HttpService {
     return this.http.post(this.BaseUrl + url, reqData, token && httpOptions);
   }
 
-  getService()
+  getService(url:any)
   {
-
+    this.token = localStorage.getItem('Token');
+    let options = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': this.token
+      })
+    }
+    return this.http.get(this.BaseUrl + url, options);
   }
 
   putService()

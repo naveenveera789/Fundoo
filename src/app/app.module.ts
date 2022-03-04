@@ -25,6 +25,7 @@ import { TakeNotesComponent } from './components/take-notes/take-notes.component
 import { DisplayNotesComponent } from './components/display-notes/display-notes.component';
 import { IconsComponent } from './components/icons/icons.component';
 import { GetAllNotesComponent } from './components/get-all-notes/get-all-notes.component';
+import { AuthguardService } from './authguard.service';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,9 @@ import { GetAllNotesComponent } from './components/get-all-notes/get-all-notes.c
     MatListModule,
     MatToolbarModule
   ],
-  providers: [],
+  providers: [
+    AuthguardService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
