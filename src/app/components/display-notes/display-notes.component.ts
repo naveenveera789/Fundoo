@@ -8,7 +8,7 @@ import { NoteService } from 'src/app/services/noteService/note.service';
 })
 export class DisplayNotesComponent implements OnInit {
 
-  @Input() allnotes : [];
+  @Input() allnotes : any;
 
   constructor(private noteService:NoteService) { }
 

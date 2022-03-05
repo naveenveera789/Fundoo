@@ -34,7 +34,7 @@
       <mat-sidenav-container class="sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
           <mat-sidenav #snav  [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches" fixedTopGap="56" opened="true">
                 <mat-nav-list (click)="isExpanded=!isExpanded" >            
-                  <mat-list-item class="order"><div><button mat-icon-button class="btns"><img src="assets/lightbulb_black_24dp.svg"></button></div><p class="names" *ngIf="isExpanded">Notes</p> </mat-list-item>             
+                  <mat-list-item class="order"><button mat-icon-button class="btns"><img src="assets/lightbulb_black_24dp.svg"></button><p class="names" *ngIf="isExpanded">Notes</p> </mat-list-item>             
                   <mat-list-item class="order"><button mat-icon-button class="btns"><img src="assets/notifications_black_24dp.svg"></button><p class="names" *ngIf="isExpanded">Reminders</p> </mat-list-item>        
                   <mat-list-item class="order"><button mat-icon-button class="btns"><img src="assets/edit_black_24dp.svg"></button><p class="names" *ngIf="isExpanded">Edit labels</p> </mat-list-item>               
                   <mat-list-item class="order"><button mat-icon-button class="btns"><img src="assets/archive_black_24dp.svg"></button><p class="names" *ngIf="isExpanded">Archive</p> </mat-list-item>                  
@@ -42,7 +42,7 @@
                 </mat-nav-list>
           </mat-sidenav>
           <mat-sidenav-content class="content">
-            <p><app-take-notes></app-take-notes></p>
+            <router-outlet></router-outlet>
           </mat-sidenav-content>
       </mat-sidenav-container>
 </div>

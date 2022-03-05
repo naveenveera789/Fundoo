@@ -1,7 +1,11 @@
-<div>
-    <mat-card>
+<div class="design" *ngFor="let note of allnotes" fxLaoutAlign="start">
+    <mat-card fxFlexFill fxLayout="column">
         <div>
-
+            <strong>{{note.title}}</strong>
+        </div>
+        <div>{{note.description}}</div>
+        <div>
+            <app-icons class="icons"></app-icons>
         </div>
     </mat-card>
 </div>

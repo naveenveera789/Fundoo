@@ -10,7 +10,6 @@ export class TakeNotesComponent implements OnInit {
 
   title:any;
   description:any;
-  token:any;
   isExpanded = false;
 
   constructor(private noteService:NoteService) { }

@@ -17,16 +17,9 @@ export class HttpService {
     return this.http.post(this.BaseUrl + url, reqData, token && httpOptions);
   }
 
-  getService(url:any)
+  getService(url: string, httpOptions: any={})
   {
-    this.token = localStorage.getItem('Token');
-    let options = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Authorization': this.token
-      })
-    }
-    return this.http.get(this.BaseUrl + url, options);
+    return this.http.get(this.BaseUrl + url, httpOptions);
   }
 
   putService()
