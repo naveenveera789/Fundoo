@@ -27,7 +27,10 @@
             <button mat-icon-button><img src="assets/apps_black_24dp.svg"></button>
           </div>
           <div>
-            <button mat-icon-button><img src="assets/account_circle_black_24dp.svg"></button>
+            <button mat-icon-button [matMenuTriggerFor]="log"><img src="assets/account_circle_black_24dp.svg"></button>
+            <mat-menu #log="matMenu">
+               <button mat-menu-item (click)="LogOut()">Log Out</button>
+            </mat-menu>
           </div>
         </div>
       </mat-toolbar>

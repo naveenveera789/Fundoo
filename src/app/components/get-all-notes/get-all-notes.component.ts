@@ -15,7 +15,7 @@ export class GetAllNotesComponent implements OnInit {
   constructor(private noteService: NoteService) { }
 
   ngOnInit(): void {
-    this.getallnotes()
+    this.getallnotes();
   }
 
   getallnotes()

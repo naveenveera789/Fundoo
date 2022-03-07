@@ -25,7 +25,10 @@ import { TakeNotesComponent } from './components/take-notes/take-notes.component
 import { DisplayNotesComponent } from './components/display-notes/display-notes.component';
 import { IconsComponent } from './components/icons/icons.component';
 import { GetAllNotesComponent } from './components/get-all-notes/get-all-notes.component';
-import { AuthguardService } from './authguard.service';
+import { AuthguardService } from './services/authguardService/authguard.service';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatDialogModule} from '@angular/material/dialog';
+import { UpdateComponent } from './components/update/update.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,8 @@ import { AuthguardService } from './authguard.service';
     TakeNotesComponent,
     DisplayNotesComponent,
     IconsComponent,
-    GetAllNotesComponent
+    GetAllNotesComponent,
+    UpdateComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +60,9 @@ import { AuthguardService } from './authguard.service';
     HttpClientModule,
     MatSidenavModule,
     MatListModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatMenuModule,
+    MatDialogModule
   ],
   providers: [
     AuthguardService

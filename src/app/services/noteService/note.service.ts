@@ -36,4 +36,27 @@ export class NoteService {
     return this.httpService.getService('/notes/getNotesList',headersObject)
    }
 
+   deletenotes(data:any)
+   {
+    let headersObject = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': this.token
+      })
+    }
+    console.log("delete notes called in service notes");
+    return this.httpService.postService('/notes/trashNotes',data,true,headersObject)
+   }
+
+   updatenotes(data:any)
+   {
+    let headersObject = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': this.token
+      })
+    }
+    console.log("update notes called in service notes");
+    return this.httpService.postService('/notes/updateNotes',data,true,headersObject)
+   }
 }

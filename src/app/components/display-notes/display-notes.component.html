@@ -1,11 +1,15 @@
-<div class="design" *ngFor="let note of allnotes" fxLaoutAlign="start">
-    <mat-card fxFlexFill fxLayout="column">
-        <div>
-            <strong>{{note.title}}</strong>
-        </div>
-        <div>{{note.description}}</div>
-        <div>
-            <app-icons class="icons"></app-icons>
-        </div>
-    </mat-card>
+<div class="design" fxFlexFill fxLayout="row wrap" fxLayoutGap="30px grid" >
+    <div *ngFor="let note of allnotes"> 
+        <mat-card class="matcard">
+            <div>
+                <mat-card-title (click)="openDialog(note)">{{note.title}}</mat-card-title>
+            </div>
+            <div>
+                <mat-card-subtitle (click)="openDialog(note)">{{note.description}}</mat-card-subtitle>
+            </div>
+            <div>
+                <app-icons class="icons"></app-icons>
+            </div>
+        </mat-card>
+    </div>
 </div>

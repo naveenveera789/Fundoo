@@ -1,4 +1,19 @@
 .design{
-    padding-top: 100px;
+    padding-top: 80px;
     padding-left: 100px;
+}
+.matcard{
+    border-color: lightgray;
+    border-radius: 4%;
+    border-width: 1px;
+    border-style:solid;
+}
+.icons{
+    visibility: hidden;
+}
+.matcard:hover .icons{
+    visibility: visible;
+}
+.matcard:hover{
+    box-shadow: rgba(0, 0, 0, 0.5) 1px 6px 9px;
 }

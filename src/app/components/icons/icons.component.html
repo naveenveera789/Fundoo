@@ -1,8 +1,11 @@
-<div class="container" fxLayout="row" fxLayoutGap="18px">
+<div class="container" fxLayout="row" fxLayoutGap="3px">
     <button mat-icon-button><img src="assets/add_alert_black_18dp.svg"></button>
     <button mat-icon-button><img src="assets/person_add_alt_black_18dp.svg"></button>
     <button mat-icon-button><img src="assets/palette_black_18dp.svg"></button>
     <button mat-icon-button><img src="assets/image_black_18dp.svg"></button>
     <button mat-icon-button><img src="assets/archive_black_18dp.svg"></button>
-    <button mat-icon-button><img src="assets/more_vert_black_18dp.svg"></button>
+    <button mat-icon-button [matMenuTriggerFor]="more"><img src="assets/more_vert_black_18dp.svg"></button>
+    <mat-menu #more="matMenu">
+        <button mat-menu-item (click)="delete()">Delete Note</button>
+    </mat-menu>
 </div>

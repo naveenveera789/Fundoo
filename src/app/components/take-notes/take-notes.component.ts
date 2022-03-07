@@ -30,7 +30,13 @@ export class TakeNotesComponent implements OnInit {
     console.log(reqData);
     if(this.title && this.description)
     {
-      this.noteService.takenotes(reqData).subscribe((response:any) => {console.log(response);localStorage.setItem("token",response.id)}, error => {console.log(error);})
+      this.noteService.takenotes(reqData).subscribe((response:any) => {
+        console.log(response);
+        localStorage.setItem("token",response.id);
+        this.title='';
+        this.description=''
+      },
+       error => {console.log(error);})
     }
     else{
       console.log("Enter the Fields");
