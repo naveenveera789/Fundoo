@@ -9,7 +9,7 @@ import { NoteService } from 'src/app/services/noteService/note.service';
 
 export class GetAllNotesComponent implements OnInit {
 
-  token:any;
+  // token:any;
   notesarray:any;
 
   constructor(private noteService: NoteService) { }
@@ -18,12 +18,21 @@ export class GetAllNotesComponent implements OnInit {
     this.getallnotes();
   }
 
+  autoRefresh(data:any)
+  {
+    console.log(data);
+    this.getallnotes();
+  }
+
   getallnotes()
   {
     this.noteService.getallnotes().subscribe((response:any)=>{
     this.notesarray=response.data.data;
     console.log(this.notesarray);
-    },error=>{console.log(error)});
+    this.notesarray =this.notesarray.filter((data:any) => {
+      console.log(data.isDeleted)
+      return data.isDeleted === false && data.isArchived === false;
+    })},error=>{console.log(error)});
   }
-  
+
 }

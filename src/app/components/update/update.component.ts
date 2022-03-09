@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, OnInit} from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { NoteService } from 'src/app/services/noteService/note.service';
 
@@ -8,9 +8,9 @@ import { NoteService } from 'src/app/services/noteService/note.service';
   styleUrls: ['./update.component.scss']
 })
 export class UpdateComponent implements OnInit {
-
   title:any;
   description:any;
+  noteId:any;
   constructor(private noteService: NoteService,public matDialogRef : MatDialogRef<UpdateComponent>,@Inject(MAT_DIALOG_DATA) public data:any) { }
 
   ngOnInit(): void {
@@ -22,12 +22,13 @@ export class UpdateComponent implements OnInit {
   update()
   {
     let reqData = {
-      noteId:this.data.id,
-      title:this.title,
-      description:this.description
+      noteId : this.data.id,
+      title : this.title,
+      description : this.description
     }
     this.noteService.updatenotes(reqData).subscribe((response:any)=>{console.log(response);});
     this.matDialogRef.close();
+    window.location.reload();
   }
 
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import {MediaMatcher} from '@angular/cdk/layout';
 import { Router } from '@angular/router';
+import { SignupComponent } from '../signup/signup.component';
 
 
 @Component({
@@ -20,8 +21,28 @@ export class DashboardComponent implements OnInit {
     this.mobileQuery.addListener(this._mobileQueryListener);
   }
 
+
   ngOnInit(): void {
     this.mobileQuery.removeListener(this._mobileQueryListener);
+  }
+
+  notes()
+  {
+    this.router.navigate(['/dashboard/notes']);
+  }
+
+  archive()
+  {
+    this.router.navigate(['/dashboard/archiveNotes']);
+  }
+
+  trash()
+  {
+    this.router.navigate(['/dashboard/trashNotes']);
+  }
+
+  refresh(){
+    window.location.reload();
   }
 
   LogOut()

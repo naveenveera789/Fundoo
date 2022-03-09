@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { NoteService } from 'src/app/services/noteService/note.service';
 
 @Component({
@@ -7,6 +7,7 @@ import { NoteService } from 'src/app/services/noteService/note.service';
   styleUrls: ['./take-notes.component.scss']
 })
 export class TakeNotesComponent implements OnInit {
+  @Output() createNoteToRefresh = new EventEmitter<any>();
 
   title:any;
   description:any;
@@ -32,9 +33,9 @@ export class TakeNotesComponent implements OnInit {
     {
       this.noteService.takenotes(reqData).subscribe((response:any) => {
         console.log(response);
-        localStorage.setItem("token",response.id);
         this.title='';
-        this.description=''
+        this.description='';
+        this.createNoteToRefresh.emit(response);
       },
        error => {console.log(error);})
     }

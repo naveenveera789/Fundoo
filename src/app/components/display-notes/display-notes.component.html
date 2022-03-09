@@ -8,7 +8,7 @@
                 <mat-card-subtitle (click)="openDialog(note)">{{note.description}}</mat-card-subtitle>
             </div>
             <div>
-                <app-icons class="icons"></app-icons>
+                <app-icons class="icons" [noteId]="note" ></app-icons>
             </div>
         </mat-card>
     </div>

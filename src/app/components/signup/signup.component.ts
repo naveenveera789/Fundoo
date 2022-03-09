@@ -8,7 +8,6 @@ import { UserService } from 'src/app/services/userService/user.service';
   styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent implements OnInit {
-
   signupForm: FormGroup;
     submitted = false;
   public showPassword: boolean = false;
@@ -22,7 +21,7 @@ export class SignupComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
       confirm: ['', Validators.required],
-      service: 'advance'
+      service: ['advance', Validators.required]
   });
   }
 

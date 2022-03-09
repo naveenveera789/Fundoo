@@ -25,7 +25,7 @@ export class DisplayNotesComponent implements OnInit {
       width:'650px',
       data : note
     });
-    dialogRef.afterClosed().subscribe(result=>{this.title;this.description;});
+    dialogRef.afterClosed().subscribe(result=>{this.title;this.description;console.log(result)});
   }
 
 }

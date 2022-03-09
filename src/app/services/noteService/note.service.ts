@@ -26,14 +26,16 @@ export class NoteService {
 
    getallnotes()
    {
+    this.token = localStorage.getItem("token");
+
     let headersObject = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': this.token
       })
     }
-    console.log("get-all-notes called in service notes");
-    return this.httpService.getService('/notes/getNotesList',headersObject)
+    console.log("get-all-notes called in service notes",this.token);
+    return this.httpService.getService('/notes/getNotesList',true,headersObject)
    }
 
    deletenotes(data:any)
@@ -48,6 +50,19 @@ export class NoteService {
     return this.httpService.postService('/notes/trashNotes',data,true,headersObject)
    }
 
+   archivenotes(data:any)
+   {
+    let headersObject = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': this.token
+      })
+    }
+    console.log("archive notes called in service notes");
+    return this.httpService.postService('/notes/archiveNotes',data,true,headersObject)
+   }
+
+
    updatenotes(data:any)
    {
     let headersObject = {
@@ -58,5 +73,42 @@ export class NoteService {
     }
     console.log("update notes called in service notes");
     return this.httpService.postService('/notes/updateNotes',data,true,headersObject)
+   }
+
+   archiveNotesList()
+   {
+    this.token = localStorage.getItem("token");
+    let headersObject = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': this.token
+      })
+    }
+    console.log("archive notes list called in service notes");
+    return this.httpService.getService('/notes/getArchiveNotesList',true,headersObject)
+   }
+
+   trashNotesList()
+   {
+    this.token = localStorage.getItem("token");
+    let headersObject = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': this.token
+      })
+    }
+    console.log("trash notes list called in service notes");
+    return this.httpService.getService('/notes/getTrashNotesList',true,headersObject)
+   }
+
+   colorpalette(data:any){   
+    let headersObject= {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': this.token
+      })
+    }
+    console.log("color palette notes called in service notes");
+    return this.httpService.postService('/notes/changesColorNotes',data,true,headersObject)
    }
 }

@@ -10,6 +10,8 @@ import { SignupComponent } from './components/signup/signup.component';
 import { AuthenticationGuard } from './authentication.guard';
 import { GetAllNotesComponent } from './components/get-all-notes/get-all-notes.component';
 import { DisplayNotesComponent } from './components/display-notes/display-notes.component';
+import { GetAllArchiveNotesComponent } from './components/get-all-archive-notes/get-all-archive-notes.component';
+import { GetAllTrashNotesComponent } from './components/get-all-trash-notes/get-all-trash-notes.component';
 
 const routes: Routes = [
   { path: '', redirectTo: "/login", pathMatch: 'full' },
@@ -19,9 +21,11 @@ const routes: Routes = [
   {path:'resetpassword/:token',component:ResetpasswordComponent},
   {path:'dashboard', component:DashboardComponent,canActivate:[AuthenticationGuard],
        children:[
-         { path: '', redirectTo: "notes", pathMatch: 'full' },
+         {path: '', redirectTo: "notes", pathMatch: 'full' },
          {path:'notes',component:GetAllNotesComponent},
-         {path: 'display', component:DisplayNotesComponent}
+         {path: 'display', component:DisplayNotesComponent},
+         {path: 'archiveNotes', component:GetAllArchiveNotesComponent},
+         {path: 'trashNotes', component:GetAllTrashNotesComponent}
       ]
   },
 ];

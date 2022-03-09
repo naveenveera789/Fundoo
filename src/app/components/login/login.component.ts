@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
       this.userService.login(reqData).subscribe((response:any)=>{
        console.log("login",response);
        localStorage.setItem("token", response.id);
-       localStorage.setItem("SessionUser", this.user);
+      //localStorage.setItem("SessionUser", this.user);
        this.router.navigate(['/dashboard']);
       },
       error=>{console.log(error);})
