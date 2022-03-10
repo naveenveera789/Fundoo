@@ -1,1 +1,1 @@
-<app-display-notes [allnotes]="archiveNotes"></app-display-notes>
+<app-display-notes (changeColorOfNote)="unarchive($event)" [allnotes]="archiveNotes"></app-display-notes>

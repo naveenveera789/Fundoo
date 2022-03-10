@@ -23,4 +23,9 @@ export class GetAllArchiveNotesComponent implements OnInit {
       },error=>{console.log(error);});
   }
 
+  unarchive(e:any){
+    console.log("hii");
+    this.getAllArchiveNotes();
+  }
+
 }

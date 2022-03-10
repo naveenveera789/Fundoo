@@ -4,7 +4,7 @@
         <button mat-icon-button matTooltip="Collaborator"><img src="assets/person_add_alt_black_18dp.svg"></button>
         <button mat-icon-button matTooltip="Background options" [matMenuTriggerFor]="colorpalette"><img src="assets/palette_black_18dp.svg"></button>
         <mat-menu #colorpalette="matMenu">
-            <div fxLayout="row" fxLayoutGap="8px">
+            <div class="design" fxLayoutGap="2px">
                 <button class="btn" *ngFor="let color of colors" mat-mini-fab [style.background-color]="color" (click)="changeColor(color)"></button>
             </div>
         </mat-menu>

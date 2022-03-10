@@ -10,7 +10,7 @@
         <button mat-icon-button matTooltip="Search" class="search"><img src="assets/search_black_24dp.svg"></button>
       </div>
       <div>
-        <input type="text" class="searchtext" placeholder="Search">
+        <input type="text" class="searchtext" (keyup)='search($event)' placeholder="Search"/>
       </div>
     </div>
     <div class="icons" fxLayout="row" fxLayoutAlign="end" fxLayoutGap="20px">

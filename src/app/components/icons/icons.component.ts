@@ -38,8 +38,7 @@ export class IconsComponent implements OnInit {
       noteIdList: [this.noteId.id],
       isDeleted: true, 
     }
-    this.noteService.deletenotes(reqData).subscribe((response:any)=> {console.log(response);});
-    window.location.reload();
+    this.noteService.deletenotes(reqData).subscribe((response:any)=> {console.log(response);this.changeColorOfNote.emit(response)});
   }
 
   archive(){
@@ -48,8 +47,7 @@ export class IconsComponent implements OnInit {
       noteIdList: [this.noteId.id],
       isArchived: true, 
     }
-    this.noteService.archivenotes(reqData).subscribe((response:any)=> {console.log(response);});
-    window.location.reload();
+    this.noteService.archivenotes(reqData).subscribe((response:any)=> {console.log(response);this.changeColorOfNote.emit(response)});
   }
 
   unarchive(){
@@ -58,8 +56,7 @@ export class IconsComponent implements OnInit {
       noteIdList: [this.noteId.id],
       isArchived: false, 
     }
-    this.noteService.archivenotes(reqData).subscribe((response:any)=> {console.log(response);});
-    window.location.reload();
+    this.noteService.archivenotes(reqData).subscribe((response:any)=> {console.log(response);this.changeColorOfNote.emit("hello")});
   }
 
   deletePermanently(){
@@ -68,8 +65,7 @@ export class IconsComponent implements OnInit {
       noteIdList: [this.noteId.id],
       isDeleted: true, 
     }
-    this.noteService.deleteNotesPermanently(reqData).subscribe((response:any)=> {console.log(response);});
-    window.location.reload();
+    this.noteService.deleteNotesPermanently(reqData).subscribe((response:any)=> {console.log(response);this.changeColorOfNote.emit(response)});
   }
 
   restoreNotes(){
@@ -78,8 +74,7 @@ export class IconsComponent implements OnInit {
       noteIdList: [this.noteId.id],
       isDeleted: false, 
     }
-    this.noteService.deletenotes(reqData).subscribe((response:any)=> {console.log(response);});
-    window.location.reload();
+    this.noteService.deletenotes(reqData).subscribe((response:any)=> {console.log(response);this.changeColorOfNote.emit(response)});
   }
 
   changeColor(color:any){

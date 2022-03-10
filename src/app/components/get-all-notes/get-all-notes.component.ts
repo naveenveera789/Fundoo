@@ -35,4 +35,14 @@ export class GetAllNotesComponent implements OnInit {
     })},error=>{console.log(error)});
   }
 
+  changeColor(e:any){
+    console.log(e);
+    this.getallnotes();
+  }
+
+  updateChange(e:any){
+    console.log(e);
+    this.getallnotes();
+  }
+
 }

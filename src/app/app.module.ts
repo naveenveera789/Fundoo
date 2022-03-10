@@ -31,6 +31,7 @@ import { UpdateComponent } from './components/update/update.component';
 import { GetAllTrashNotesComponent } from './components/get-all-trash-notes/get-all-trash-notes.component';
 import { GetAllArchiveNotesComponent } from './components/get-all-archive-notes/get-all-archive-notes.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { SearchFilterPipe } from './pipe/search-pipe/search-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     UpdateComponent,
     GetAllTrashNotesComponent,
     GetAllArchiveNotesComponent,
+    SearchFilterPipe,
   ],
   imports: [
     BrowserModule,

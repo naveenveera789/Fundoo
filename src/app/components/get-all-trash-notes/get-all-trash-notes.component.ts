@@ -23,4 +23,8 @@ export class GetAllTrashNotesComponent implements OnInit {
       },error=>{console.log(error);});
   }
 
+  trash(e:any){
+    this.getAllTrashNotes();
+  }
+
 }
