@@ -1,6 +1,6 @@
-<div class="design" fxFlexFill fxLayout="row wrap" fxLayoutGap="30px grid" >
-    <div *ngFor="let note of allnotes"> 
-        <mat-card class="matcard">
+<div class="design" fxFlexFill fxLayout="row wrap" fxLayoutGap="30px grid">
+    <div *ngFor="let note of allnotes">
+        <mat-card class="matcard" [style.background]="note.color">
             <div>
                 <mat-card-title (click)="openDialog(note)">{{note.title}}</mat-card-title>
             </div>
@@ -8,7 +8,7 @@
                 <mat-card-subtitle (click)="openDialog(note)">{{note.description}}</mat-card-subtitle>
             </div>
             <div>
-                <app-icons class="icons" [noteId]="note" ></app-icons>
+                <app-icons class="icons" (changeColorOfNote)="transferFromNotes($event)" [noteId]="note"></app-icons>
             </div>
         </mat-card>
     </div>

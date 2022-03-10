@@ -9,7 +9,6 @@ import { NoteService } from 'src/app/services/noteService/note.service';
 
 export class GetAllNotesComponent implements OnInit {
 
-  // token:any;
   notesarray:any;
 
   constructor(private noteService: NoteService) { }
@@ -28,6 +27,7 @@ export class GetAllNotesComponent implements OnInit {
   {
     this.noteService.getallnotes().subscribe((response:any)=>{
     this.notesarray=response.data.data;
+    this.notesarray.reverse();
     console.log(this.notesarray);
     this.notesarray =this.notesarray.filter((data:any) => {
       console.log(data.isDeleted)

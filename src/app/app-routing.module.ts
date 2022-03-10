@@ -14,15 +14,15 @@ import { GetAllArchiveNotesComponent } from './components/get-all-archive-notes/
 import { GetAllTrashNotesComponent } from './components/get-all-trash-notes/get-all-trash-notes.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: "/login", pathMatch: 'full' },
-  {path:'login',component:LoginComponent},
-  {path:'signup',component:SignupComponent},
-  {path:'forgotpassword',component:ForgotpasswordComponent},
-  {path:'resetpassword/:token',component:ResetpasswordComponent},
-  {path:'dashboard', component:DashboardComponent,canActivate:[AuthenticationGuard],
+  {path: '', redirectTo: "/login", pathMatch: 'full'},
+  {path: 'login',component:LoginComponent},
+  {path: 'signup',component:SignupComponent},
+  {path: 'forgotpassword',component:ForgotpasswordComponent},
+  {path: 'resetpassword/:token',component:ResetpasswordComponent},
+  {path: 'dashboard', component:DashboardComponent,canActivate:[AuthenticationGuard],
        children:[
          {path: '', redirectTo: "notes", pathMatch: 'full' },
-         {path:'notes',component:GetAllNotesComponent},
+         {path: 'notes',component:GetAllNotesComponent},
          {path: 'display', component:DisplayNotesComponent},
          {path: 'archiveNotes', component:GetAllArchiveNotesComponent},
          {path: 'trashNotes', component:GetAllTrashNotesComponent}

@@ -10,28 +10,29 @@
                     <span style="color:green">o</span>
                     <span style="color:red">o</span>
                 </h1>
-                <h1>Sign in</h1> 
-                <p>to continue to Fundoo</p>    
+                <h1>Sign in</h1>
+                <p>to continue to Fundoo</p>
             </div>
             <div fxLayout="column">
                 <mat-form-field appearance="outline">
                     <mat-label>Email or Phone</mat-label>
-                    <input matInput formControlName="email" >
+                    <input matInput formControlName="email">
                     <mat-error>Email is required</mat-error>
                 </mat-form-field>
                 <mat-form-field appearance="outline">
                     <mat-label>Password</mat-label>
-                    <input matInput [type]="showPassword ? 'text' : 'password'" formControlName="password" >
-                    <mat-icon matSuffix (click)="togglePasswordVisibility()">{{showPassword?'visibility_off':'visibility'}}</mat-icon>
+                    <input matInput [type]="showPassword ? 'text' : 'password'" formControlName="password">
+                    <mat-icon matSuffix (click)="togglePasswordVisibility()">
+                        {{showPassword?'visibility_off':'visibility'}}</mat-icon>
                     <mat-error>Password is required</mat-error>
-                </mat-form-field> 
+                </mat-form-field>
                 <a mat-button routerLink="/forgotpassword" class="link1">Forgot password?</a>
                 <mat-checkbox>Remember me</mat-checkbox>
-            </div> 
+            </div>
             <div class="bottom" fxLayout="row">
                 <a mat-button class="link2" routerLink="/signup">Create account</a>
                 <button mat-flat-button class="button">Log In</button>
-            </div> 
+            </div>
         </form>
     </mat-card>
 </div>

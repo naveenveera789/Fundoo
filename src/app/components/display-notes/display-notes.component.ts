@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { NoteService } from 'src/app/services/noteService/note.service';
 import { UpdateComponent } from '../update/update.component';
 
 @Component({
@@ -26,6 +25,10 @@ export class DisplayNotesComponent implements OnInit {
       data : note
     });
     dialogRef.afterClosed().subscribe(result=>{this.title;this.description;console.log(result)});
+  }
+
+  transferFromNotes(e:any){
+      console.log(e)
   }
 
 }

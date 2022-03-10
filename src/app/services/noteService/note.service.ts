@@ -27,7 +27,6 @@ export class NoteService {
    getallnotes()
    {
     this.token = localStorage.getItem("token");
-
     let headersObject = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
@@ -99,6 +98,17 @@ export class NoteService {
     }
     console.log("trash notes list called in service notes");
     return this.httpService.getService('/notes/getTrashNotesList',true,headersObject)
+   }
+
+   deleteNotesPermanently(data:any){
+    let headersObject = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': this.token
+      })
+    }
+    console.log("delete notes permanently called in service notes");
+    return this.httpService.postService('/notes/deleteForeverNotes',data,true,headersObject)
    }
 
    colorpalette(data:any){   

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -31,7 +30,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { UpdateComponent } from './components/update/update.component';
 import { GetAllTrashNotesComponent } from './components/get-all-trash-notes/get-all-trash-notes.component';
 import { GetAllArchiveNotesComponent } from './components/get-all-archive-notes/get-all-archive-notes.component';
-import { ColorpaletteComponent } from './components/colorpalette/colorpalette.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -48,7 +47,6 @@ import { ColorpaletteComponent } from './components/colorpalette/colorpalette.co
     UpdateComponent,
     GetAllTrashNotesComponent,
     GetAllArchiveNotesComponent,
-    ColorpaletteComponent
   ],
   imports: [
     BrowserModule,
@@ -68,7 +66,8 @@ import { ColorpaletteComponent } from './components/colorpalette/colorpalette.co
     MatListModule,
     MatToolbarModule,
     MatMenuModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTooltipModule
   ],
   providers: [
     AuthguardService

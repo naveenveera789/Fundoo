@@ -1,7 +1,6 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import {MediaMatcher} from '@angular/cdk/layout';
 import { Router } from '@angular/router';
-import { SignupComponent } from '../signup/signup.component';
 
 
 @Component({
