@@ -1,21 +1,15 @@
 .float-container{
-    margin-top: 5%;
+    width: 100vw;
+    height: 100vh;
 }
 .design{
-    padding-left: 23px;
     border-style:double;
     border-color:lightgray;
     border-radius: 1.5%;
     border-width:0.5px;
 }
-.lname{
-    padding-left: 1.5%;
-}
 .uname{
-    width:411px;
-}
-.cpass{
-    padding-left: 1.5%;
+    width:407px;
 }
 .hint{
     padding-left: 10px;
@@ -23,16 +17,13 @@
     font-weight: lighter;
 }
 .link1{
-    margin-left: -10px;
     font-size: 16px;
     color:#1a73e8;
 }
 .button{
      text-align: start;
-     margin-left: 290px;
-     height:38px;
-     width: 150px;
-     padding-left: 19px;
+     height:36px;
+     width: 30px;
      color:white;
      background-color:#1a73e8;
  }

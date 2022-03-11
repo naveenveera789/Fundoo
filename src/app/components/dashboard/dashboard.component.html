@@ -2,10 +2,10 @@
   <mat-toolbar class="toolbar">
     <button mat-icon-button matTooltip="Main Menu" class="menu" (click)="isExpanded=!isExpanded"><img src="assets/menu_black_24dp.svg"></button>
     <div fxLayout="row" fxLayoutAlign="center" fxLayoutGap="6px">
-      <img class="keep_img" src="assets/keep_2020q4_48dp.png">
+      <img fxHide.xs="true" fxHide.sm="true" class="keep_img" src="assets/keep_2020q4_48dp.png">
       <p class="heading">Fundoo</p>
     </div>
-    <div class="searchBar" fxLayout="row" fxLayoutAlign="start center">
+    <div class="searchBar" fxLayout="row" fxShow fxHide.xs fxFlexOffset="14" fxFlexOffset.sm="12" fxLayoutAlign="start center">
       <div>
         <button mat-icon-button matTooltip="Search" class="search"><img src="assets/search_black_24dp.svg"></button>
       </div>

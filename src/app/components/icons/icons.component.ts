@@ -15,7 +15,7 @@ export class IconsComponent implements OnInit {
  isShowIconsForTrash: boolean=false;
  isShowIconsForArchive: boolean=false;
 
- colors=['#ffffff','#e57373 ','#fbbc04','#fff475','#ccff90','#a7ffeb','#cbf0f8','#aecbfa','#d7aefb','#fdcfe8','#e6c9a8','#e8eaed'];
+ colors=['#ffffff','#e57373','#fbbc04','#fff475','#ccff90','#a7ffeb','#cbf0f8','#aecbfa','#d7aefb','#fdcfe8','#e6c9a8','#e8eaed'];
 
   constructor(private noteService:NoteService, private route : ActivatedRoute) { }
 
@@ -85,5 +85,4 @@ export class IconsComponent implements OnInit {
     }
     this.noteService.colorpalette(reqData).subscribe((response:any)=> {console.log(response);this.changeColorOfNote.emit(color)});
   }
-
 }

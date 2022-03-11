@@ -1,5 +1,5 @@
-<div class="div" fxLayoutAlign="center">
-    <mat-card class="design" fxFlex="25">
+<div class="div" fxLayoutAlign="center center">
+    <mat-card fxFlex.xs="95" fxFlex.sm="90" class="design" fxFlex="25">
         <form [formGroup]="loginForm" (ngSubmit)="login()">
             <div fxLayout="column" fxLayoutAlign="center center">
                 <h1>
@@ -26,10 +26,14 @@
                         {{showPassword?'visibility_off':'visibility'}}</mat-icon>
                     <mat-error>Password is required</mat-error>
                 </mat-form-field>
-                <a mat-button routerLink="/forgotpassword" class="link1">Forgot password?</a>
-                <mat-checkbox>Remember me</mat-checkbox>
+                <div>
+                    <a mat-button routerLink="/forgotpassword" class="link1">Forgot password?</a>
+                </div>
+                <div class="check">
+                    <mat-checkbox>Remember me</mat-checkbox>
+                </div>
             </div>
-            <div class="bottom" fxLayout="row">
+            <div class="bottom" fxLayout="row" fxLayoutAlign="space-between center">
                 <a mat-button class="link2" routerLink="/signup">Create account</a>
                 <button mat-flat-button class="button">Log In</button>
             </div>

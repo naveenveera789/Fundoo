@@ -1,6 +1,6 @@
 <div class="design" fxFlexFill fxLayout="row wrap" fxLayoutGap="30px grid">
     <div *ngFor='let note of allnotes | searchFilter:searchWord'>
-        <mat-card class="matcard" [style.background]="note.color">
+        <mat-card class="matcard" fxLayout.xs="column" fxFlex.xs="100" [style.background]="note.color">
             <div>
                 <mat-card-title (click)="openDialog(note)">{{note.title}}</mat-card-title>
             </div>

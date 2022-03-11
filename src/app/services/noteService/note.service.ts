@@ -33,7 +33,7 @@ export class NoteService {
         'Authorization': this.token
       })
     }
-    console.log("get-all-notes called in service notes",this.token);
+    console.log("get-all-notes called in service notes");
     return this.httpService.getService('/notes/getNotesList',true,headersObject)
    }
 
